@@ -1,0 +1,8 @@
+/mnt/d/mcxcl/build/CMakeFiles/clheader.dir
+/mnt/d/mcxcl/build/CMakeFiles/mcxcl.dir
+/mnt/d/mcxcl/build/CMakeFiles/mcxcl-exe.dir
+/mnt/d/mcxcl/build/CMakeFiles/edit_cache.dir
+/mnt/d/mcxcl/build/CMakeFiles/rebuild_cache.dir
+/mnt/d/mcxcl/build/zmat/CMakeFiles/zmat.dir
+/mnt/d/mcxcl/build/zmat/CMakeFiles/edit_cache.dir
+/mnt/d/mcxcl/build/zmat/CMakeFiles/rebuild_cache.dir

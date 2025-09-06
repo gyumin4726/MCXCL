@@ -1,0 +1,46 @@
+{
+	"MCXData":	{
+		"Info":	{
+			"Version":	1,
+			"MediaNum":	1,
+			"DetNum":	4,
+			"ColumnNum":	2,
+			"TotalPhoton":	100000,
+			"DetectedPhoton":	97,
+			"SavedPhoton":	97,
+			"LengthUnit":	1,
+			"SeedByte":	0,
+			"Normalizer":	10000,
+			"Repeat":	1,
+			"SrcNum":	1,
+			"SaveDetFlag":	5,
+			"Media":	[{
+					"mua":	0,
+					"mus":	1.00000001335143e-10,
+					"g":	1,
+					"n":	1
+				}, {
+					"mua":	0.00100000004749745,
+					"mus":	0.10000000149011612,
+					"g":	0.89999997615814209,
+					"n":	1.3300000429153442
+				}]
+		},
+		"PhotonData":	{
+			"detid":	{
+				"_ArrayType_":	"uint32",
+				"_ArraySize_":	[97, 1],
+				"_ArrayZipType_":	"zlib",
+				"_ArrayZipSize_":	97,
+				"_ArrayZipData_":	"eAF9j0kKwDAMA522/39zI8jAoEMOAsVa7KyZ+TbejXV4AH8O5x0f3mjheJiDm693WkNHcweab+ku5sk4T645cN4c3X/wze5jX9/eu93zA7k8APg="
+			},
+			"ppath":	{
+				"_ArrayType_":	"single",
+				"_ArraySize_":	[97, 1],
+				"_ArrayZipType_":	"zlib",
+				"_ArrayZipSize_":	97,
+				"_ArrayZipData_":	"eAEBhAF7/hPVnkKawwNC/zrQQR+S50K4KwlCeRbKQdUPLUIoRSdCgsUXQrFp30JmDppCE7VVQktj0UKrROZBmiXjQfEDkEGZLchBmJ29QdTfrkHeNAlDVE2BQu/j00H8Q/RC9pIMQnkyJ0J/9sFCGFPgQWS4x0HTowpD6a2UQpcNAkLhmvdCjES7QXZiF0OOZ7RBADhcQjU+GkN+MwtCeRoQQ2jd/0IOKuBBUFtFQlwZz0GrVlpC6RYJQlWOE0LSijRCKSQbQofS2EHyr1NCEkkVQ6qtSEKtfwBD4k7XQToLuUH+fx5CkF4aQzIDc0If4g9Ct3s0QjaqvkGxyARDkvW+Qd3xH0MzTvBBhTEaQ7y2HkMqaCdDr+QSQ4zBdkHpo1BCSQ2wQeMZ5UGAD6dDFVQFQ3tggkFP+iBCvsINQ7fxT0Lrmv1CwkFOQssu1EFD11tCjfQbQ+1j8UJHoyBCuh65Qa9g6UEz1ApDOizqQZvFPULtoDFCcRU1Qmtd2kG1CRRD3Q8VQyLoLkPb6KMt"
+			}
+		}
+	}
+}

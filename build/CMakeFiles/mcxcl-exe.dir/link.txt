@@ -1,0 +1,1 @@
+/usr/bin/c++ -DMCX_EMBED_CL -DMCX_OPENCL -DUSE_OS_TIMER -D_hypot=hypot -g -pedantic -Wall -fPIC -O3 -rdynamic CMakeFiles/mcxcl-exe.dir/mcxcl.c.o -o /mnt/d/mcxcl/bin/mcxcl   -L/mnt/d/mcxcl/src/zmat  -Wl,-rpath,/mnt/d/mcxcl/src/zmat /mnt/d/mcxcl/lib/libmcxcl.a zmat/libzmat.a /usr/lib/x86_64-linux-gnu/libOpenCL.so  -static-libgcc -static-libstdc++ 

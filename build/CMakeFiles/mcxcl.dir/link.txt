@@ -1,0 +1,2 @@
+/usr/bin/ar qc /mnt/d/mcxcl/lib/libmcxcl.a CMakeFiles/mcxcl.dir/mcx_host.cpp.o CMakeFiles/mcxcl.dir/mcx_utils.c.o CMakeFiles/mcxcl.dir/mcx_shapes.c.o CMakeFiles/mcxcl.dir/mcx_tictoc.c.o CMakeFiles/mcxcl.dir/mcx_neurojson.cpp.o CMakeFiles/mcxcl.dir/cjson/cJSON.c.o CMakeFiles/mcxcl.dir/ubj/ubjw.c.o
+/usr/bin/ranlib /mnt/d/mcxcl/lib/libmcxcl.a
