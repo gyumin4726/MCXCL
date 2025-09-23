@@ -194,7 +194,7 @@ def visualize_water_samples():
             
             # 순수 이미지 생성 (224x224 픽셀)
             plt.figure(figsize=(2.24, 2.24))  # 2.24x2.24 인치
-            plt.imshow(fluence_map.T, cmap='hot', origin='lower', vmin=0, vmax=30000)
+            plt.imshow(fluence_map.T, cmap='hot', origin='lower')
             plt.axis('off')  # 모든 축과 라벨 제거
             plt.subplots_adjust(left=0, right=1, top=1, bottom=0)  # 여백 제거
             
