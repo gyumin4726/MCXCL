@@ -6,11 +6,11 @@
         "LengthUnit": 1.0,
         "Media": [
             {"mua": 0.00, "mus": 0.0, "g": 1.00, "n": 1.0},
-            {"mua": 0.01, "mus": 1.0, "g": 0.8, "n": 1.5}
+            {"mua": 0.0001, "mus": 0.0, "g": null, "n": 1.52}
         ]
     },
     "Session": {
-        "Photons": 100000,
+        "Photons": 1000,
         "RNGSeed": 12345,
         "ID": "glass_test"
     },
@@ -23,7 +23,7 @@
         "Source": {
             "Pos": [30.0, 30.0, 0.0],
             "Dir": [0.0, 0.0, 1.0],
-            "Type": "pencil"
+            "Type": "isotropic"
         },
         "Detector": [
             {

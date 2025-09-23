@@ -155,7 +155,7 @@ def analyze_optical_properties(array, metadata, material_name='Glass'):
 
 def main():
     """메인 함수"""
-    jnii_file = 'glass_result.jnii'
+    jnii_file = 'glass_test.jnii'
     
     if not os.path.exists(jnii_file):
         print(f"오류: {jnii_file} 파일을 찾을 수 없습니다.")
