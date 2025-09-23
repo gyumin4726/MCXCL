@@ -164,8 +164,8 @@ def extract_jnifti_data(jnii_file):
     return array, data
 
 def visualize_glass_samples():
-    """유리 샘플들을 시각화"""
-    print("\n🎨 이미지 생성 시작...")
+    """유리 샘플들을 시간적 동역학으로 시각화"""
+    print("\n🎨 시간적 동역학 이미지 시퀀스 생성 시작...")
     
     # 모든 jnii 파일 찾기
     jnii_files = [f for f in os.listdir('data/jnii') if f.endswith('.jnii')]
@@ -177,38 +177,53 @@ def visualize_glass_samples():
     
     print(f"📁 발견된 jnii 파일: {len(jnii_files)}개")
     
-    # 각 샘플별로 이미지 생성
+    # 각 샘플별로 시간 게이트 시퀀스 이미지 생성
     for i, jnii_file in enumerate(jnii_files, 1):
-        print(f"\n--- 샘플 {i}/{len(jnii_files)} 시각화 중 ---")
+        print(f"\n--- 샘플 {i}/{len(jnii_files)} 시간 시퀀스 시각화 중 ---")
         
         try:
             # 데이터 추출
             array, metadata = extract_jnifti_data(f'data/jnii/{jnii_file}')
             
-            # Gate 2 데이터 추출 (산란이 있는 광자들)
-            gate2_data = array[:, :, :, 1]  # Gate 2 (1-2ns)
+            # 시간 차원 확인 (T, H, W, C 형태)
+            time_gates = array.shape[3]  # 시간 게이트 개수
+            print(f"  📊 시간 게이트 수: {time_gates}개")
             
-            # 중간 z-슬라이스 시각화
-            z_slice = gate2_data.shape[2] // 2
-            fluence_map = gate2_data[:, :, z_slice]
+            # 샘플별 폴더 생성
+            sample_folder = f'images/glass{i:03d}'
+            os.makedirs(sample_folder, exist_ok=True)
             
-            # 순수 이미지 생성 (224x224 픽셀)
-            plt.figure(figsize=(2.24, 2.24))  # 2.24x2.24 인치
-            plt.imshow(fluence_map.T, cmap='hot', origin='lower')
-            plt.axis('off')  # 모든 축과 라벨 제거
-            plt.subplots_adjust(left=0, right=1, top=1, bottom=0)  # 여백 제거
+            # 각 시간 게이트별로 이미지 생성
+            for t in range(time_gates):
+                # 각 시간 게이트의 데이터 추출
+                gate_data = array[:, :, :, t]  # 시간 t의 3D 데이터
+                
+                # 중간 z-슬라이스 시각화
+                z_slice = gate_data.shape[2] // 2
+                fluence_map = gate_data[:, :, z_slice]
+                
+                # 순수 이미지 생성 (224x224 픽셀)
+                plt.figure(figsize=(2.24, 2.24))  # 2.24x2.24 인치
+                plt.imshow(fluence_map.T, cmap='hot', origin='lower')
+                plt.axis('off')  # 모든 축과 라벨 제거
+                plt.subplots_adjust(left=0, right=1, top=1, bottom=0)  # 여백 제거
+                
+                # 이미지 저장 (시간 게이트 포함)
+                output_file = f'{sample_folder}/glass{i:03d}_{t+1}.png'
+                plt.savefig(output_file, dpi=100, bbox_inches='tight', pad_inches=0)
+                plt.close()
+                
+                print(f"    ✅ 시간 게이트 {t+1} 이미지 저장: {output_file}")
             
-            # 이미지 저장 (224x224 픽셀)
-            output_file = f'images/glass{i:03d}.png'
-            plt.savefig(output_file, dpi=100, bbox_inches='tight', pad_inches=0)
-            plt.close()
-            
-            print(f"  ✅ 이미지 저장: {output_file}")
+            print(f"  🎬 총 {time_gates}개 시간 게이트 이미지 생성 완료")
             
         except Exception as e:
             print(f"  ❌ 시각화 실패: {jnii_file} - {e}")
     
-    # 개별 이미지만 생성 (비교 이미지 제거)
+    print(f"\n📊 시간적 동역학 시퀀스 생성 완료!")
+    print(f"   - 각 샘플당 {time_gates}개 시간 게이트")
+    print(f"   - 총 {len(jnii_files)}개 샘플")
+    print(f"   - 전체 이미지 수: {len(jnii_files) * time_gates}개")
 
 
 def main():
