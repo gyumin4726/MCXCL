@@ -23,7 +23,7 @@
         "Source": {
             "Pos": [30.0, 30.0, 0.0],
             "Dir": [0.0, 0.0, 1.0],
-            "Type": "pencil"
+            "Type": "isotropic"
         },
         "Detector": [
             {
