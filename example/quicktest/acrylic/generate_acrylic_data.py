@@ -36,7 +36,7 @@ def create_acrylic_configs(num_samples=5):
             ]
         },
         "Session": {
-            "Photons": 100000,
+            "Photons": 1000,
             "RNGSeed": 12345,  # 이 값만 변경
             "ID": "acrylic_test1"  # 이 값도 변경
         },
